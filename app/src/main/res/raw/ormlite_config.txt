@@ -1,0 +1,32 @@
+#
+# generated on 2015/10/05 12:49:07
+#
+# --table-start--
+dataClass=com.pontonsoft.keepincontact.model.Contact
+tableName=contacts
+# --table-fields-start--
+# --field-start--
+fieldName=id
+generatedId=true
+# --field-end--
+# --field-start--
+fieldName=prenom
+# --field-end--
+# --field-start--
+fieldName=telephone
+# --field-end--
+# --field-start--
+fieldName=adresse
+# --field-end--
+# --field-start--
+fieldName=nom
+# --field-end--
+# --field-start--
+fieldName=dateBirth
+# --field-end--
+# --field-start--
+fieldName=dateCreated
+# --field-end--
+# --table-fields-end--
+# --table-end--
+#################################
