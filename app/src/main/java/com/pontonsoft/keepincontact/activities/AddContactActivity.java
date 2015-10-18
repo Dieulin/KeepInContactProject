@@ -24,7 +24,7 @@ import java.util.List;
  */
 public class AddContactActivity extends AppCompatActivity {
 
-    private Button enregister;
+    private Button enregistrer;
     private ContactOpenDatabaseHelper contactOpenDatabaseHelper;
     private Dao<Contact, Long> contactDao;
 
@@ -34,8 +34,8 @@ public class AddContactActivity extends AppCompatActivity {
         setContentView(R.layout.activity_add_contact);
 
         // sauvegarde des données du formulaire
-        this.enregister = (Button) findViewById(R.id.add_enregistrer);
-        this.enregister.setOnClickListener(saveToDB);
+        this.enregistrer = (Button) findViewById(R.id.add_enregistrer);
+        this.enregistrer.setOnClickListener(saveToDB);
     }
 
     /**
