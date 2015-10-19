@@ -5,12 +5,15 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.ContextMenu;
+import android.view.KeyEvent;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.EditText;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.Button;
 import android.widget.ListView;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.j256.ormlite.android.apptools.OpenHelperManager;
@@ -39,7 +42,7 @@ public class ContactsListActivity extends AppCompatActivity {
      * Initialisation l'arraylist des contacts
      */
     public ContactsListActivity() {
-        this.contactsSaved = new ArrayList<Contact>();
+
     }
 
     @Override
@@ -47,7 +50,7 @@ public class ContactsListActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_contacts_list);
 
-        // recuperation des contacts dans la bdd
+        // récupération des contacts dans la bdd
         try {
             this.getContacts();
         } catch (SQLException e) {
@@ -56,6 +59,23 @@ public class ContactsListActivity extends AppCompatActivity {
 
         // Populer la WiewList
         this.populateViewList();
+
+        EditText rechercher = (EditText) findViewById(R.id.search_contact);
+        rechercher.setOnEditorActionListener(new TextView.OnEditorActionListener() {
+            @Override
+            public boolean onEditorAction(TextView v, int actionId, KeyEvent event) {
+                try {
+                    if (v.getText().toString().equals("")) {
+                            getContacts();
+                    } else {
+                        getContacts(v.getText().toString());
+                    }
+                } catch (SQLException se) {
+                    return false;
+                }
+                return true;
+            }
+        });
     }
 
     /**
@@ -83,22 +103,37 @@ public class ContactsListActivity extends AppCompatActivity {
         Button addBtn = (Button) findViewById(R.id.add_contact);
         addBtn.setOnClickListener(addContact);
     }
-
-    /**
-     * Méthode permettant d'obtenir la liste des objet Contact dans la liste
-     * @throws SQLException
+    /*
+    * Méthode permettant d'obtenir et d'afficher la liste de tous les objets Contact de la liste
      */
     private void getContacts() throws SQLException {
-        List<Contact> contacts;
+        getContacts(null);
+    }
+    /**
+     * Méthode permettant d'obtenir et d'afficher la liste des objets Contact dans la liste dont
+     * le prénom ou le nom commencent par start.
+     * @throws SQLException
+     */
+    private void getContacts(String start) throws SQLException {
+        contactsSaved = new ArrayList<Contact>();
+        populateViewList();
 
+        List<Contact> contacts;
         this.contactOpenDatabaseHelper = OpenHelperManager.getHelper(this, ContactOpenDatabaseHelper.class);
         this.contactDao = this.contactOpenDatabaseHelper.getDao();
 
-        contacts = this.contactDao.queryForAll();
+        if (start != null) {
+            start = "%" + start + "%";
+            contacts = this.contactDao.queryBuilder().where().like("nom", start).or().like("prenom", start).query();
+        }
+        else {
+            contacts = this.contactDao.queryForAll();
+        }
 
         for (Contact contact : contacts) {
             this.contactsSaved.add(contact);
         }
+        populateViewList();
     }
 
     @Override

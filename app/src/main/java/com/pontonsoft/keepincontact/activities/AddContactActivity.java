@@ -39,12 +39,12 @@ public class AddContactActivity extends AppCompatActivity {
     }
 
     /**
-     * Listener permettant de recuperer les données du formulaire et de les enregistrer dans la BDD
+     * Listener permettant de récupérer les données du formulaire et de les enregistrer dans la BDD
      */
     // TODO : Gérer la date de naissance
     View.OnClickListener saveToDB = new View.OnClickListener() {
         public void onClick(View v) {
-            // recuperation des données du formulaire
+            // récupération des données du formulaire
             EditText nom = (EditText) findViewById(R.id.add_nom);
             EditText prenom = (EditText) findViewById(R.id.add_prenom);
             EditText telephone = (EditText) findViewById(R.id.add_telephone);
