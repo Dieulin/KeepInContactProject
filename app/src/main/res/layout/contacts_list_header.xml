@@ -1,21 +1,40 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="wrap_content"
+    android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:orientation="horizontal"
-    android:id="@+id/header" >
+    android:id="@+id/header"
+    android:weightSum="1"
+    android:background="@android:color/holo_orange_light">
 
     <EditText
-        android:layout_width="297dp"
-        android:layout_height="wrap_content"
-        android:id="@+id/search_contact" />
+        android:minWidth="250dp"
+        android:layout_width="wrap_content"
+        android:layout_height="34dp"
+        android:id="@+id/search_contact"
+        android:singleLine="true"
+        android:hint="Mot clef puis entrée"
+        android:layout_marginRight="5dp"
+        android:layout_weight="0.65"
+        android:background="@android:color/white"
+        android:layout_marginTop="5dp"
+        android:layout_marginLeft="5dp" />
 
-    <Button
-        style="?android:attr/buttonStyleSmall"
-        android:layout_width="63dp"
-        android:layout_height="wrap_content"
-        android:text="Add"
-        android:id="@+id/add_contact" />
+    <ImageButton
+        android:layout_width="50dp"
+        android:layout_height="match_parent"
+        android:src="@drawable/contact_add50x45"
+        android:id="@+id/add_contact"
+        android:layout_marginRight="5dp"
+        android:scaleType="fitXY"/>
+
+    <ImageButton
+        android:layout_width="50dp"
+        android:layout_height="45dp"
+        android:adjustViewBounds = "true"
+        android:src="@drawable/contacts_find50x45"
+        android:id="@+id/find_contacts"
+        android:scaleType="fitXY"/>
+
 </LinearLayout>

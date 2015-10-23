@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal"
+    android:id="@+id/seek"
+    android:weightSum="1"
+    android:background="#e0ecff"
+    android:baselineAligned="false"
+    android:showDividers="beginning">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Rayon de recherche (0-1000m) :"
+        android:id="@+id/rayon"
+        android:layout_marginLeft="5dp"
+        android:textStyle="italic"
+        android:textColor="@android:color/darker_gray" />
+
+    <SeekBar
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/distance_in_meter"
+        android:max="1000"
+        android:layout_marginRight="5dp" />
+</LinearLayout>

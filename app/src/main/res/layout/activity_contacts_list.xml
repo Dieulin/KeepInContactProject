@@ -7,6 +7,7 @@
     tools:context=".ContactsListActivity">
 
     <include layout="@layout/contacts_list_header" />
+    <include layout="@layout/contacts_list_seek" />
     <include layout="@layout/contacts_list_body" />
 
 </LinearLayout>

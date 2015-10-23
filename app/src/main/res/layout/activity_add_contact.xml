@@ -4,75 +4,68 @@
     android:layout_height="match_parent"
     android:weightSum="1">
 
-    <TextView
-        android:layout_width="wrap_content"
+        <EditText
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Nom"
-        android:id="@+id/textView" />
+        android:inputType="textPersonName"
+        android:hint="Prénom"
+        android:id="@+id/add_prenom"
+        android:layout_margin="5dp"
+        android:autoText="false"
+        android:background="@android:color/white"
+        android:layout_weight="0.03" />
 
     <EditText
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:inputType="textPersonName"
-        android:ems="10"
-        android:id="@+id/add_nom" />
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Prénom"
-        android:id="@+id/textView2" />
+        android:hint="Nom"
+        android:id="@+id/add_nom"
+        android:layout_margin="5dp"
+        android:autoText="false"
+        android:background="@android:color/white"
+        android:layout_weight="0.03" />
 
     <EditText
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:inputType="textPersonName"
-        android:ems="10"
-        android:id="@+id/add_prenom" />
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Date de Naissance"
-        android:id="@+id/textView5" />
-
-    <EditText
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/add_date_de_naissance" />
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Téléphone"
-        android:id="@+id/textView3" />
+        android:inputType="date"
+        android:hint="Date de Naissance"
+        android:id="@+id/add_date_de_naissance"
+        android:layout_margin="5dp"
+        android:autoText="false"
+        android:background="@android:color/white"
+        android:layout_weight="0.03" />
 
     <EditText
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:inputType="phone"
-        android:ems="10"
-        android:id="@+id/add_telephone" />
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Addresse"
-        android:id="@+id/textView4" />
+        android:hint="Téléphone"
+        android:id="@+id/add_telephone"
+        android:layout_margin="5dp"
+        android:autoText="false"
+        android:background="@android:color/white"
+        android:layout_weight="0.03" />
 
     <EditText
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:inputType="textMultiLine"
-        android:ems="10"
         android:id="@+id/add_adresse"
-        android:layout_weight="0.21" />
+        android:hint="Adresse"
+        android:layout_margin="5dp"
+        android:autoText="false"
+        android:background="@android:color/white"
+        android:layout_weight="0.26" />
 
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Enregistrer"
-        android:id="@+id/add_enregistrer" />
+    <ImageButton
+        android:layout_width="61dp"
+        android:layout_height="61dp"
+        android:src="@drawable/validate_img"
+        android:id="@+id/add_enregistrer"
+        android:layout_marginTop="5dp"
+        android:scaleType="fitXY"/>
 </LinearLayout>
 
 

@@ -7,10 +7,10 @@
     android:orientation="horizontal"
     android:id="@+id/body" >
 
-
     <ListView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/list_contact"
         android:layout_weight="1" />
+
 </LinearLayout>

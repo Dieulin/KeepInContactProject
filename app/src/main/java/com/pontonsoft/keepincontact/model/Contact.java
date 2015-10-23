@@ -3,10 +3,11 @@ package com.pontonsoft.keepincontact.model;
 import com.j256.ormlite.field.DatabaseField;
 import com.j256.ormlite.table.DatabaseTable;
 
+import java.io.Serializable;
 import java.util.Date;
 
 @DatabaseTable(tableName = "contacts")
-public class Contact {
+public class Contact implements Serializable{
 
     @DatabaseField(generatedId = true)
     private Long id;
@@ -30,6 +31,16 @@ public class Contact {
     private Date dateCreated;
 
     public Contact() {}
+
+    public Contact(Long id, String prenom, String nom, Date dateBirth, Date dateCreated, String telephone, String adresse) {
+        this.id = id;
+        this.prenom = prenom;
+        this.nom = nom;
+        this.dateBirth = dateBirth;
+        this.dateCreated = dateCreated;
+        this.telephone = telephone;
+        this.adresse = adresse;
+    }
 
     public Contact(String prenom, String nom, Date dateBirth, Date dateCreated, String telephone, String adresse) {
         this.prenom = prenom;

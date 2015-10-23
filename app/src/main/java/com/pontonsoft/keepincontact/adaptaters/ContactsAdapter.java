@@ -11,6 +11,7 @@ import com.pontonsoft.keepincontact.R;
 import com.pontonsoft.keepincontact.model.Contact;
 
 import java.util.ArrayList;
+import java.util.logging.Filter;
 
 public class ContactsAdapter extends ArrayAdapter<Contact> {
 

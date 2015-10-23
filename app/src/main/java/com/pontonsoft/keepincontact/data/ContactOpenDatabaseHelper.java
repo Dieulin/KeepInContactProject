@@ -18,7 +18,7 @@ public class ContactOpenDatabaseHelper extends OrmLiteSqliteOpenHelper{
      * The data access object used to interact with the Sqlite database to do C.R.U.D operations.
      */
     private Dao<Contact, Long> contactDao;
-    private static final String DATABASE_NAME = "contacts";
+    private static final String DATABASE_NAME = "mes_contacts";
     private static final int DATABASE_VERSION = 1;
 
     public ContactOpenDatabaseHelper(Context context) {
@@ -34,7 +34,7 @@ public class ContactOpenDatabaseHelper extends OrmLiteSqliteOpenHelper{
     public void onCreate(SQLiteDatabase database, ConnectionSource connectionSource) {
         try {
             //TableUtils.dropTable(connectionSource, Contact.class, false);
-            /**
+            /*
              * creates the Contact database table
              */
             TableUtils.createTable(connectionSource, Contact.class);
@@ -47,9 +47,7 @@ public class ContactOpenDatabaseHelper extends OrmLiteSqliteOpenHelper{
     @Override
     public void onUpgrade(SQLiteDatabase database, ConnectionSource connectionSource,int oldVersion, int newVersion) {
         try {
-            /**
-             * Recreates the database when onUpgrade is called by the framework
-             */
+            // Recreates the database when onUpgrade is called by the framework
             TableUtils.dropTable(connectionSource, Contact.class, false);
             onCreate(database, connectionSource);
 
