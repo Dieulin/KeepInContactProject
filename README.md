@@ -1,9 +1,9 @@
-# Pojet
-KeepInContactProject, un gestionnaire avancée de contacts avec la fnctionnalité de localisation des contacts se trouvant à une distance donnée (moins d'un kilomètre).
+# Projet
+KeepInContactProject, un gestionnaire avancé de contacts avec la fonctionnalité de localisation des contacts se trouvant à une distance donnée (moins d'un kilomètre).
 
 # Binôme
 Dieulin Mambouana
-Etienne Wattebled
+Étienne Wattebled
 
 # Screenshots
 *Liste des contacts :
